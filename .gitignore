@@ -22,3 +22,10 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# AdminLTE vendor assets
+/public/vendor/*
+!/public/vendor/.gitkeep
+
+/lang/vendor/*
+!/lang/vendor/.gitkeep
