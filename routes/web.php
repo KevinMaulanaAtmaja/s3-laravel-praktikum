@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\PhotosApiController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PhotosController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -39,3 +43,13 @@ Route::get('/tes-route', function () {
         'action' => $action,
     ];
 })->name('tes.route');
+
+// task
+Route::get('/pelanggan', [PelangganController::class, 'list']);
+Route::get('/user-invoke', UserController::class);
+
+
+Route::resource('/photos', PhotosController::class);
+// ->only(["index", "show"]);
+// ->except(["create", "store", "update", "destroy"]);
+Route::apiResource('/api/photos', PhotosApiController::class);
