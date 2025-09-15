@@ -15,21 +15,22 @@ return new class extends Migration
         // Schema::hasTable('flights')
         // Schema::rename('flights')
         // Schema::dropIfExists()
-        Schema::table('flights', function (Blueprint $table) {
-            // $table->string("type");
-            // $table->renameColumn('name', 'full_name');
-            $table->string('name', 50)->change();
-            $table->char('name2', 100);
-            $table->decimal('amount', $precision = 8, $scale = 2);
-            $table->double('amount2', 8, 2);
-            $table->enum('difficulty', ['easy', 'medium', 'hard']);
-            $table->integer('id')->autoIncrement()->change();
-            $table->string('email')->nullable();
-            $table->unsignedBigInteger('flight_id');
-            $table->foreign('flight_id')->references('id')->on('bibliografi_kategori');
-            // $table->dropForeign('flight_id');
-            // Schema::enableForeignKeyConstraints();
-        });
+
+        // Schema::table('flights', function (Blueprint $table) {
+        //     // $table->string("type");
+        //     // $table->renameColumn('name', 'full_name');
+        //     $table->string('name', 50)->change();
+        //     $table->char('name2', 100);
+        //     $table->decimal('amount', $precision = 8, $scale = 2);
+        //     // $table->double('amount2', 8, 2);
+        //     $table->enum('difficulty', ['easy', 'medium', 'hard']);
+        //     $table->integer('id')->autoIncrement()->change();
+        //     $table->string('email')->nullable();
+        //     $table->unsignedBigInteger('flight_id');
+        //     $table->foreign('flight_id')->references('id')->on('bibliografi_kategori');
+        //     // $table->dropForeign('flight_id');
+        //     // Schema::enableForeignKeyConstraints();
+        // });
     }
 
     /**

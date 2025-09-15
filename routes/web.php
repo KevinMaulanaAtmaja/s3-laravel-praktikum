@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\PhotosApiController;
+use App\Http\Controllers\BibliografiKategoriController;
+use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\UserController;
@@ -53,3 +55,14 @@ Route::resource('/photos', PhotosController::class);
 // ->only(["index", "show"]);
 // ->except(["create", "store", "update", "destroy"]);
 Route::apiResource('/api/photos', PhotosApiController::class);
+
+// task
+// Route::resource( '/biblikat', BibliografiKategoriController::class);
+Route::get('/biblikat/all', [BibliografiKategoriController::class, 'index']);
+Route::get('/biblikat/store', [BibliografiKategoriController::class, 'store']);
+
+Route::get('/flight/all', [FlightController::class, 'index']);
+Route::get('/flight/add', [FlightController::class, 'store']);
+Route::get('/flight/some', [FlightController::class, 'some']);
+Route::get('/flight/edit/{id}', [FlightController::class, 'update']);
+Route::get('/flight/delete/{id}', [FlightController::class, 'destroy']);
