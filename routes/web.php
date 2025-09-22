@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\API\PhotosApiController;
 use App\Http\Controllers\BibliografiKategoriController;
 use App\Http\Controllers\FlightController;
@@ -66,3 +67,13 @@ Route::get('/flight/add', [FlightController::class, 'store']);
 Route::get('/flight/some', [FlightController::class, 'some']);
 Route::get('/flight/edit/{id}', [FlightController::class, 'update']);
 Route::get('/flight/delete/{id}', [FlightController::class, 'destroy']);
+
+// task
+Route::get('admin/profile', function () {
+    // return view('admin.profile', ['name' => 'Kevin Maulana']);
+    return view('admin.profile')->with('name', 'Kevin Maulana');
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
